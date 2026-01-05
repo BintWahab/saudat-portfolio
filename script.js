@@ -1,66 +1,88 @@
 // script.js
-console.log("👋 Hi there! Thanks for checking out Saudat's portfolio");
 
-//Show button on scroll
-window.onscroll = function() {
-    const topBtn = document.getElementById("topBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
-};
+// Console hello
+console.log("Portfolio loaded — Saudat's site.");
 
-// Scroll to top on click
-document.getElementById("topBtn").addEventListener("click", function() {
-    window.scrollTo({top: 0, behavior: "smooth"});
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Typing animation
+/* Typing animation */
 const textArray = [
   "Product Manager",
   "Program Associate Intern",
-  "Tech Enthusiast",
-  "Storyteller in Tech"
+  "Program Manager in training",
+  "Tech & Product Storyteller"
 ];
-
-let currentText = 0;
-let charIndex = 0;
-
+let currentText = 0, charIndex = 0;
 function type() {
-  const typingText = document.getElementById("typing-text");
+  const el = document.getElementById("typing-text");
+  if (!el) return;
   if (charIndex < textArray[currentText].length) {
-    typingText.textContent += textArray[currentText].charAt(charIndex);
+    el.textContent += textArray[currentText].charAt(charIndex);
     charIndex++;
-    setTimeout(type, 100);
+    setTimeout(type, 80);
   } else {
-    setTimeout(erase, 2000); // wait before erasing
+    setTimeout(erase, 1800);
   }
 }
-
 function erase() {
-  const typingText = document.getElementById("typing-text");
+  const el = document.getElementById("typing-text");
+  if (!el) return;
   if (charIndex > 0) {
-    typingText.textContent = textArray[currentText].substring(0, charIndex - 1);
+    el.textContent = textArray[currentText].substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(erase, 50);
+    setTimeout(erase, 40);
   } else {
     currentText = (currentText + 1) % textArray.length;
-    setTimeout(type, 500);
+    setTimeout(type, 400);
   }
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   type();
 });
 
-// Dark mode toggle
-document.getElementById("theme-toggle").addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
-  document.querySelector("header").classList.toggle("dark-mode");
-  document.querySelector("footer").classList.toggle("dark-mode");
-  document.querySelectorAll(".btn").forEach(btn => btn.classList.toggle("dark-mode"));
-  document.getElementById("topBtn").classList.toggle("dark-mode");
+/* Scroll-to-top button */
+const topBtn = document.getElementById("topBtn");
+window.onscroll = function () {
+  if (!topBtn) return;
+  const show = document.body.scrollTop > 250 || document.documentElement.scrollTop > 250;
+  topBtn.style.display = show ? "block" : "none";
+};
+
+// click -> smooth scroll top
+if (topBtn) topBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+/* Dynamic year */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* Smooth anchor scrolling */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute("href"));
+    if (target) target.scrollIntoView({behavior:"smooth",block:"start"});
+  });
 });
+
+/* Dark mode toggle */
+const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+  // init: read saved preference
+  const saved = localStorage.getItem("theme");
+  if (saved === "dark") {
+    document.body.classList.add("dark-mode");
+    document.querySelectorAll(".card").forEach(c=>c.classList.add("dark-mode"));
+    document.querySelectorAll(".btn").forEach(b=>b.classList.add("dark-mode"));
+    document.querySelector("header").classList.add("dark-mode");
+    document.querySelector("footer").classList.add("dark-mode");
+  }
+  themeToggle.addEventListener("click", () => {
+    const body = document.body;
+    const isDark = body.classList.toggle("dark-mode");
+    // toggle cards & other elements
+    document.querySelectorAll(".card").forEach(c=>c.classList.toggle("dark-mode"));
+    document.querySelectorAll(".btn").forEach(b=>b.classList.toggle("dark-mode"));
+    document.querySelector("header").classList.toggle("dark-mode");
+    document.querySelector("footer").classList.toggle("dark-mode");
+    // save preference
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+}

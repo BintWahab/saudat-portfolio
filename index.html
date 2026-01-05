@@ -1,57 +1,243 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8"/>
-        <meta name ="viewport" content ="width = device-width, initial-scale=1.0" />
-        <title>Saudat Imam | Product Manager</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="favicon.png" type="image/png">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saudat Imam | Product & Program Manager</title>
 
-    </head>
-    <body>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-       <header>
-        <h1>Hi, I'm Saudat</h1>
-        <img src="my-photo.png" alt="Portrait of Saudat Imam" class="profile-pic"/>
-        <p><span id="typing-text"></span><span id="cursor">|</span></p>
-        <a href="#contact" class="btn">Contact Me</a>
-        <button id="theme-toggle" class="btn">🌙 Toggle Dark Mode</button>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
 
-       </header>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="card" style="position:sticky;top:16px;z-index:999;">
+    <div style="max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1rem;">
+      <a href="#home" style="text-decoration:none;color:var(--primary);font-weight:700;">Saudat Imam</a>
+      <div>
+        <a class="btn" href="#projects" style="margin-right:0.6rem;">Projects</a>
+        <a class="btn" href="#testimonials" style="margin-right:0.6rem;">Testimonials</a>
+        <button id="theme-toggle" class="btn">🌙</button>
+      </div>
+    </div>
+  </nav>
 
-       <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I'm a passionate and curious product manager currently undergoing an internship as a Program Associate at Studio3Launchpad - an EdTech company focused on innovation and learning. My journey in tech combines strategy, storytelling, and user-centered thinking.
-            <br><br>
-            I'm exploring the intersection of product development, content creation, and team collaboration. This site is part of my learning journey as I build hands-on skills in web development and product thinking.  
-        </p>
-       </section>
+  <!-- HERO -->
+  <header id="home">
+    <img src="my-photo.png" alt="Saudat Imam" class="profile-pic" />
+    <h1>Hi, I’m Saudat Imam</h1>
+    <p><span id="typing-text"></span><span id="cursor">|</span></p>
+    <a class="btn" href="#contact">Get in touch</a>
+  </header>
 
-       <section id="projects">
-        <h2>Projects and Highlights</h2>
-        <ul>
-            <li>Created my first personal website using HTML & CSS</li>
-            <li>Wrote a Product Requirements Document (PRD) for a lightweight mental wellness app for remote professionals who want to care for their mind without breaking their workflow; MindNest</li>
-            <li>Contributed to product research and feature planning for MindNest</li>
-            <li>Currently exploring user journeys, wireframes and product strategy</li>
-        </ul>
-       </section>
+  <!-- ABOUT -->
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+      I’m a Product Manager and Program Associate at Studio3Launchpad. I blend product strategy, user research, and hands-on execution, from writing PRDs to running experiments and building simple front-end prototypes.
+    </p>
+  </section>
 
-       <section id="contact">
-        <h2>Contact Me</h2>
-        <p>
-            I'm open to connecting, collaborating, and learning! <br/>
-            Reach me via email: <strong><a href="mailto:bintwahab03@gmail.com">bintwahab03@gmail.com</a></strong><br/>
-            or say hi on <a href="https://www.linkedin.com/in/saudat-imam" target="_blank">LinkedIn</a>
-        </p>
-       </section>
+  <!-- SKILLS -->
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <ul>
+      <li>User Research & Interviews</li>
+      <li>Product Strategy & Roadmapping</li>
+      <li>PRD & Requirements Writing</li>
+      <li>Go-To-Market Strategy</li>
+      <li>Project & Program Management</li>
+      <li>Basic Frontend: HTML, CSS, JavaScript</li>
+      <li>Tools: Figma, Notion, GitHub, Trello, Jira</li>
+    </ul>
+  </section>
 
-       <footer>
-        <p>© <span id="year"></span> Saudat Imam | Product-led, Purpose-driven</p>
-       </footer>
+  <!-- PROJECTS -->
+  <section id="projects" class="card">
+    <h2>Projects</h2>
 
-       <button id="topBtn" title="Back to top">↑</button>
-       <script src="script.js"></script>
-    </body>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+      <!-- Project Card -->
+         <!-- ReGive -->
+      <article class="card">
+        <h3>ReGive — Trusted Resale Marketplace</h3>
+        <p><strong>Role:</strong> Product Manager & Team Lead</p>
+        <p>Short: Built a trusted platform concept for reuse in emerging markets. Led PRD & pitch deck.</p>
+        <a href="regive-case-study.html" class="btn">View case study</a>
+      </article>
+
+      <!-- NGO Planner -->
+    <article class="card">
+      <h3>NGO Planner — AI Content Planning Tool</h3>
+      <p><strong>Role:</strong> Product Manager</p>
+      <p>Built a structured PRD, personas, MoSCoW features, and success metrics for an AI-driven tool for NGOs.</p>
+      <a href="ngo-planner.html" class="btn">View Case Study</a>
+    </article>
+
+     <!-- MindNest -->
+      <article class="card">
+        <h3>MindNest — Lightweight Mental Wellness App</h3>
+        <p><strong>Role:</strong> Product Contributor</p>
+        <p>Short: PRD, personas and feature planning for a focused wellness app for remote professionals.</p>
+        <a href="projects.html#mindnest" class="btn">See details</a>
+      </article>
+
+      <!-- Personal Website -->
+      <article class="card">
+        <h3>Personal Website</h3>
+        <p><strong>Role:</strong> Frontend & UX</p>
+        <p>Built this portfolio using HTML, CSS & JS (typing animation, dark mode, scroll-to-top).</p>
+        <a href="projects.html#personal-website" class="btn">See details</a>
+      </article>
+
+       <!-- TikTok Teardown -->
+    <article class="card">
+      <h3>TikTok Product Teardown</h3>
+      <p><strong>Role:</strong> Product Manager</p>
+      <p>Deep-dive analysis into TikTok's user flows, retention mechanics, recommendation system, and growth loops.</p>
+      <a href="tiktok-teardown.html" class="btn">Coming Soon</a>
+    </article>
+
+      <!-- add more cards as needed -->
+    </div>
+  </section>
+
+  <!-- ELITE EVENTS & SPEAKING -->
+<section id="events" class="elite-section">
+  <h2 class="section-title">Events & Speaking</h2>
+
+  <div class="events-grid">
+
+    <!-- CARD 1 -->
+    <article class="event-card fade-up">
+      <div class="orb orb1"></div>
+      <span class="event-badge">Speaker</span>
+      <h3>DevFest Ilorin 2025</h3>
+      <p class="event-role">Product Management • Community</p>
+      <p class="event-desc">Spoke on breaking into Product Management, building impactful products, and navigating tech communities.</p>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="event-card fade-up">
+      <div class="orb orb2"></div>
+      <span class="event-badge purple">Speaker & Contributor</span>
+      <h3>Tech Empowerment Summit (TES)</h3>
+      <p class="event-role">Program Design • Career Strategy</p>
+      <p class="event-desc">Led sessions on tech clarity, program planning, and designing solutions that drive community impact.</p>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="event-card fade-up">
+      <div class="orb orb3"></div>
+      <span class="event-badge pink">Panelist</span>
+      <h3>Design & Product Roundtable</h3>
+      <p class="event-role">Product × Design Collaboration</p>
+      <p class="event-desc">Discussed product discovery, high-velocity teams, and improving collaboration between PMs and designers.</p>
+    </article>
+
+  </div>
+</section>
+
+
+  </div>
+</section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+  <h2 class="section-title">What People Say About Me</h2>
+  <p class="section-subtitle">Feedback from cross-functional teammates I’ve worked with.</p>
+
+  <div class="testimonial-grid">
+
+    <!-- Courage -->
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p class="testimonial-text">
+        Saudat is passionate, determined, and an excellent communicator. Her leadership
+        and effectiveness throughout the ReGive project made working with her a fantastic experience.
+      </p>
+      <div class="profile">
+        <div class="avatar"></div>
+        <div>
+          <h4>Courage</h4>
+          <p>UI/UX Designer — ReGive</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Olabisi -->
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p class="testimonial-text">
+        Saudat led our hackathon team with dedication, clarity, and enthusiasm.
+        Her presentation was precise and she represented the team confidently.
+      </p>
+      <div class="profile">
+        <div class="avatar"></div>
+        <div>
+          <h4>Olabisi</h4>
+          <p>Data Analyst — ReGive</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oluwaferanmi -->
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p class="testimonial-text">
+        Working with Saudat was a game-changer. She brought clarity, structure, and
+        innovative thinking that kept the entire team aligned. She’s a superstar.
+      </p>
+      <div class="profile">
+        <div class="avatar"></div>
+        <div>
+          <h4>Oluwaferanmi Oduyemi</h4>
+          <p>Product Manager — ReGive</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ugochukwu -->
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p class="testimonial-text">
+        Saudat’s leadership is calm, clear, and empowering. She communicates the big picture,
+        assigns tasks thoughtfully, and ensures the whole team stays supported.
+      </p>
+      <div class="profile">
+        <div class="avatar"></div>
+        <div>
+          <h4>Ugochukwu</h4>
+          <p>UI/UX Designer & Assistant Lead — ReGive</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>
+      I’m open to collaborations, mentorship, and product/program roles. <br/>
+      Email: <strong><a href="mailto:bintwahab03@gmail.com">bintwahab03@gmail.com</a></strong> <br/>
+      LinkedIn: <strong><a href="https://www.linkedin.com/in/saudat-imam" target="_blank">linkedin.com/in/saudat-imam</a></strong>
+    </p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Saudat Imam — Product-led, Purpose-driven</p>
+  </footer>
+
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
 </html>
